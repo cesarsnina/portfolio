@@ -1,4 +1,9 @@
 import Image from "next/image";
+import dynamic from "next/dynamic";
+// import Blog from "blog/page";
+
+// const myBlog = dynamic(() => import("./blog/page.tsx"));
+import Blog from "./blog/page.tsx";
 
 export default function Home() {
   return (
@@ -50,6 +55,7 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+        <Blog slug="dream-job" />
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
