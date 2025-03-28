@@ -3,7 +3,7 @@ import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
   // Configure pageExtensions to include md and mdx
-  pageExtensions: ["ts", "tsx", "md", "mdx"],
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   // Optionally, add any other Next.js config below
   reactStrictMode: true,
 };

@@ -1,4 +1,4 @@
-const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
+const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
   const { default: Post } = await import(`../../../content/${slug}.mdx`);
 
@@ -8,12 +8,13 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
 export const generateStaticParams = () => {
   return [
     { slug: "career" },
-    { slug: "goals" },
     { slug: "dream-job" },
+    { slug: "goals" },
     { slug: "learning" },
+    { slug: "welcome" },
   ];
 };
 
 export const dynamicParams = false;
 
-export default Page;
+export default Blog;
