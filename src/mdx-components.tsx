@@ -35,6 +35,11 @@ const components = {
   ol: (props: ListProps) => <ol className="list-decimal pl-5" {...props} />,
   ul: (props: ListProps) => <ul className="list-disc pl-5" {...props} />,
   li: (props: ListItemProps) => <li className="" {...props} />,
+  blockquote: (props: BlockquoteProps) => (
+    <blockquote className="p-4 my-4 border-s-4 border-gray-300 bg-gray-50 ">
+      <p className="text-xl italic font-medium leading-relaxed" {...props} />
+    </blockquote>
+  ),
   a: ({ href, children, ...props }: AnchorProps) => {
     const className =
       "text-blue-500 hover:text-blue-700 dark:text-gray-400 hover:dark:text-gray-300 dark:underline dark:underline-offset-2 dark:decoration-gray-800";
@@ -83,12 +88,6 @@ const components = {
         ))}
       </tbody>
     </table>
-  ),
-  blockquote: (props: BlockquoteProps) => (
-    <blockquote
-      className="ml-[0.075em] border-l-3 border-gray-300 pl-4 text-gray-700 dark:border-zinc-600 dark:text-zinc-300"
-      {...props}
-    />
   ),
 };
 
