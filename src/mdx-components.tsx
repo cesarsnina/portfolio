@@ -28,25 +28,13 @@ const components = {
     <h6 className="text-lg font-bold m-3" {...props} />
   ),
   p: (props: ParagraphProps) => <p className="" {...props} />,
-  ol: (props: ListProps) => (
-    <ol
-      className="text-gray-800 dark:text-zinc-300 list-decimal pl-5 space-y-2"
-      {...props}
-    />
-  ),
-  ul: (props: ListProps) => (
-    <ul
-      className="text-gray-800 dark:text-zinc-300 list-disc pl-5 space-y-1"
-      {...props}
-    />
-  ),
-  li: (props: ListItemProps) => <li className="pl-1" {...props} />,
-  em: (props: ComponentPropsWithoutRef<"em">) => (
-    <em className="font-medium" {...props} />
-  ),
+  em: (props: ComponentPropsWithoutRef<"em">) => <em className="" {...props} />,
   strong: (props: ComponentPropsWithoutRef<"strong">) => (
-    <strong className="font-medium" {...props} />
+    <strong className="" {...props} />
   ),
+  ol: (props: ListProps) => <ol className="list-decimal pl-5" {...props} />,
+  ul: (props: ListProps) => <ul className="list-disc pl-5" {...props} />,
+  li: (props: ListItemProps) => <li className="" {...props} />,
   a: ({ href, children, ...props }: AnchorProps) => {
     const className =
       "text-blue-500 hover:text-blue-700 dark:text-gray-400 hover:dark:text-gray-300 dark:underline dark:underline-offset-2 dark:decoration-gray-800";
