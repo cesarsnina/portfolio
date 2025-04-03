@@ -1,12 +1,19 @@
 import React, { ComponentPropsWithoutRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 type HeadingProps = ComponentPropsWithoutRef<"h1">;
 type ParagraphProps = ComponentPropsWithoutRef<"p">;
-type ListProps = ComponentPropsWithoutRef<"ul">;
+type StrongProps = ComponentPropsWithoutRef<"strong">;
+type EmProps = ComponentPropsWithoutRef<"em">;
+type UnorderListProps = ComponentPropsWithoutRef<"ul">;
+type OrderListProps = ComponentPropsWithoutRef<"ol">;
 type ListItemProps = ComponentPropsWithoutRef<"li">;
-type AnchorProps = ComponentPropsWithoutRef<"a">;
 type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
+type AnchorProps = ComponentPropsWithoutRef<"a">;
+type PreProps = ComponentPropsWithoutRef<"pre">;
+type CodeProps = ComponentPropsWithoutRef<"code">;
+type ImgProps = ComponentPropsWithoutRef<"img">;
 
 const components = {
   h1: (props: HeadingProps) => (
@@ -28,21 +35,21 @@ const components = {
     <h6 className="text-lg font-bold m-3" {...props} />
   ),
   p: (props: ParagraphProps) => <p className="" {...props} />,
-  em: (props: ComponentPropsWithoutRef<"em">) => <em className="" {...props} />,
-  strong: (props: ComponentPropsWithoutRef<"strong">) => (
-    <strong className="" {...props} />
+  strong: (props: StrongProps) => <strong className="" {...props} />,
+  em: (props: EmProps) => <em className="" {...props} />,
+  ul: (props: UnorderListProps) => <ul className="list-disc pl-5" {...props} />,
+  ol: (props: OrderListProps) => (
+    <ol className="list-decimal pl-5" {...props} />
   ),
-  ol: (props: ListProps) => <ol className="list-decimal pl-5" {...props} />,
-  ul: (props: ListProps) => <ul className="list-disc pl-5" {...props} />,
   li: (props: ListItemProps) => <li className="" {...props} />,
   blockquote: (props: BlockquoteProps) => (
-    <blockquote className="p-4 my-4 border-s-4 border-gray-300 bg-gray-50 ">
-      <p className="text-xl italic font-medium leading-relaxed" {...props} />
-    </blockquote>
+    <blockquote
+      className="p-2 my-2 pl-4 border-l-5 border-green-600 bg-gray-400 text-black italic text-md leading-tight"
+      {...props}
+    />
   ),
   a: ({ href, children, ...props }: AnchorProps) => {
-    const className =
-      "text-blue-500 hover:text-blue-700 dark:text-gray-400 hover:dark:text-gray-300 dark:underline dark:underline-offset-2 dark:decoration-gray-800";
+    const className = "text-blue-400 hover:text-blue-600";
     if (href?.startsWith("/")) {
       return (
         <Link href={href} className={className} {...props}>
@@ -69,7 +76,24 @@ const components = {
       </a>
     );
   },
-  Table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
+  pre: (props: PreProps & CodeProps) => (
+    <pre className="p-2 my-2 pl-8 text-black bg-gray-400">
+      <code {...props} />
+    </pre>
+  ),
+  code: (props: CodeProps) => (
+    <code className="text-black bg-gray-400" {...props} />
+  ),
+  img: (props: any) => (
+    <Image
+      width="300"
+      height="500"
+      url="/users/cesar/Desktop/Projects/portfolio/public/pexels-jhelmuth.jpg"
+      className="h-5 w-3"
+      {...props}
+    />
+  ),
+  table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
     <table>
       <thead>
         <tr>
