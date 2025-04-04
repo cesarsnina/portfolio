@@ -1,5 +1,4 @@
 import React, { ComponentPropsWithoutRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 type HeadingProps = ComponentPropsWithoutRef<"h1">;
@@ -84,15 +83,7 @@ const components = {
   code: (props: CodeProps) => (
     <code className="text-black bg-gray-400" {...props} />
   ),
-  img: (props: any) => (
-    <Image
-      width="300"
-      height="500"
-      url="/users/cesar/Desktop/Projects/portfolio/public/pexels-jhelmuth.jpg"
-      className="h-5 w-3"
-      {...props}
-    />
-  ),
+  img: (props: ImgProps) => <img className="w-40 h-30" {...props} />,
   table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
     <table>
       <thead>
