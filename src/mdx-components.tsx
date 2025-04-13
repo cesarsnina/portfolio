@@ -33,17 +33,19 @@ const components = {
   h6: (props: HeadingProps) => (
     <h6 className="text-lg font-bold m-3" {...props} />
   ),
-  p: (props: ParagraphProps) => <p className="" {...props} />,
+  p: (props: ParagraphProps) => <p className="mx-3" {...props} />,
   strong: (props: StrongProps) => <strong className="" {...props} />,
   em: (props: EmProps) => <em className="" {...props} />,
-  ul: (props: UnorderListProps) => <ul className="list-disc pl-5" {...props} />,
+  ul: (props: UnorderListProps) => (
+    <ul className="list-disc mx-3 pl-5" {...props} />
+  ),
   ol: (props: OrderListProps) => (
-    <ol className="list-decimal pl-5" {...props} />
+    <ol className="list-decimal mx-3 pl-5" {...props} />
   ),
   li: (props: ListItemProps) => <li className="" {...props} />,
   blockquote: (props: BlockquoteProps) => (
     <blockquote
-      className="p-2 my-2 pl-4 border-l-5 border-green-600 bg-gray-400 text-black italic text-md leading-tight"
+      className="p-2 mx-3 my-2 pl-2 border-l-5 border-green-600 bg-gray-400 text-black italic text-md leading-tight"
       {...props}
     />
   ),
@@ -76,7 +78,7 @@ const components = {
     );
   },
   pre: (props: PreProps & CodeProps) => (
-    <pre className="p-2 my-2 pl-8 text-black bg-gray-400">
+    <pre className="p-2 mx-3 my-2 pl-8 text-black bg-gray-400">
       <code {...props} />
     </pre>
   ),
