@@ -1,8 +1,14 @@
 import Link from "next/link";
 import NavBar from "../components/NavBar.tsx";
+import Header from "../components/Header.tsx";
 
 const Home = () => {
-  return <NavBar />;
+  return (
+    <>
+      <NavBar />
+      <Header />
+    </>
+  );
 };
 
 export default Home;
