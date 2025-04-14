@@ -1,22 +1,8 @@
 import Link from "next/link";
+import NavBar from "../components/NavBar.tsx";
 
 const Home = () => {
-  return (
-    <ul>
-      <li>
-        <Link href="/">Home</Link>
-      </li>
-      <li>
-        <Link href="/blog/goals">About Us</Link>
-      </li>
-      <li>
-        <Link href="/blog/career">Blog Post</Link>
-      </li>
-      <li>
-        <Link href="/blog/test">Test Post</Link>
-      </li>
-    </ul>
-  );
+  return <NavBar />;
 };
 
 export default Home;
