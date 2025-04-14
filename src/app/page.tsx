@@ -1,12 +1,14 @@
 import Link from "next/link";
 import NavBar from "../components/NavBar.tsx";
 import Header from "../components/Header.tsx";
+import Footer from "../components/Footer.tsx";
 
 const Home = () => {
   return (
     <>
       <NavBar />
       <Header />
+      <Footer />
     </>
   );
 };
